@@ -24,6 +24,12 @@ for f in tmpfiles[0]:
     EVflist.append(Path(f))
 EVdir = EVflist[0].parent
 
+# select whether you want to do an open, save, close for each EV file
+# this will greatly add to the time for the program to run, but will
+# avoid lengthy read times when the EV file is opened
+osc_answ = 'n'
+osc_answ = input('Do you want to open, save, close for each EV file? [y/n]')
+
 '''
 if use glob
 #for f in TopDirectory.glob('**/*_GPS.EV'):
@@ -58,12 +64,11 @@ for evfl in EVflist:
         evApp.saveEvFile(evfl)
         evApp.closeEvFile(evfl)
 
-    '''
     # do an open, save, close to generate the new .evi files if necessary
-    evApp.openEvFile(evfl)
-    evApp.saveEvFile(evfl)
-    evApp.closeEvFile(evfl)
-    '''
+    if (osc_answ != 'n'):
+        evApp.openEvFile(evfl)
+        evApp.saveEvFile(evfl)
+        evApp.closeEvFile(evfl)
 
 # close the Echoview COM
 EvApp = None
