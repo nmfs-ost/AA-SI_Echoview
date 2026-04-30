@@ -666,8 +666,33 @@ class Utilities:
         self.EvFile.Filesets.Item(fsdx).DataFiles.Add(datafile)
         return True
 
+    def getEvExporters(self):
+        '''Get the exporters in the EV file'''
+        self.ExporterCollection = self.EvFile.Exporters
+        if (self.ExporterCollection):
+            return True
+        else:
+            print('no Exporters')
+            return False
 
+    def getEvExportersCount(self):
+        '''get the number of exporters'''
+        self.exporters_count = self.ExporterCollection.Count
+        return self.exporters_count
 
+    def getEvExporterNamebyItem(self, itemnum):
+        '''get the name of the exporter'''
+        self.exporter_name = self.ExporterCollection.Item(itemnum).Name
+        return self.exporter_name
+
+    def exportEvExporterbyItem(self, itemnum, ofile):
+        '''export the data using the exporter by item number'''
+        print(f'item number: {itemnum}')
+        exported = self.ExporterCollection.Item(itemnum).Export(ofile)
+        if (exported):
+            return True
+        else:
+            return False
 
 
 class ProgressBar(QtWidgets.QWidget):
@@ -702,7 +727,7 @@ class Errors:
             errorDir = Path(errorDir)
         self.EFhndl = open(str((errorDir/Path('ErrorFile_'+function+'.csv'))), 'w')
 
-    def appendErrorFile(self, message):
+    def AppendErrorFile(self, message):
         '''Append an error message to the error file
            Input: error message'''
         self.EFhndl.write(message+'\n')
