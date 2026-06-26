@@ -16,10 +16,12 @@ When Echoview first reads a data file, or when the version of Echoview has chang
 C:\Windows\rclone-v1.68.1-windows-amd64\rclone mount echoview-union: F: -o
 UserName=pam_user --vfs-cache-mode full --vfs-cache-max-size 50G --file-perms 0777
 --dir-perms 0777 --network-mode --config=C:\Users\pam_user\Desktop\rclone_custom_prod.conf
-1. 
-
-
-
-
+   1. You will see "The service rclone has been started" in the command prompt and you should see the "F:" drive mounted as "echoview-union" in your Windows Explorer.
+   2. Essentially, the F drive is a "virtual mirror" of the GCS prod bucket. This provides a couple of advantages and disadvantages.
+      1. **Use the F drive to add files to a EV file.** This is important! If you do not, you are taking advantage of this feature and your read time will be extremely slow.
+      2. The .evi file will be written to the data directory on the F drive. But remember this is a virtual mirror and the .evi file does not exist anywhere else.
+      3. You can save the EV file anywhere. We recommend not saving the EV file to the F drive, because, again, it exists in a virtual world. We are setting up the directory structure so that the EV files can be written to the GCS prod bucket in a way that does not interfere with the data structure. Stay tuned for more information.
+      4. After the .evi file(s) have been written to the F drive, you will want to copy/move them to the GCS prod data directory where your files really reside.
+         1. Using the Windows Explorer, copy/move the .evi files from the F drive to the 
 
 
