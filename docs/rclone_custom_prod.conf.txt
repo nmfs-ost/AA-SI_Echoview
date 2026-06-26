@@ -1,0 +1,10 @@
+﻿[active-acoustics-gcs]
+type = google cloud storage
+project_number = ggn-nmfs-aa-prod-1
+bucket_policy_only = true
+env_auth = true
+
+
+[echoview-union]
+type = union
+upstreams = C:\Users\pam_user\AppData\Local\Echoview_Workspace active-acoustics-gcs:ggn-nmfs-aa-prod-1-data:ro
