@@ -11,7 +11,7 @@ When Echoview first reads a data file, or when the version of Echoview has chang
 1. The instructions are provided in this [idx fix document](./docs/Echoview_idx_files_issue_immediate_solution.pdf).
 1. A version of the rclone_custom.conf file for the prod GCS bucket is [here](docs/rclone_custom_prod.conf.txt).
    1. Make sure you remove the ".txt" suffix!
-1. Open a command prompt window (
+1. Open a command prompt window by either clicking on the cmd prompt icon <img src="images/cmd.png" width="25" height="25"> in the taskbar or typing "command prompt" in the search field in the taskbar.
 C:\Windows\rclone-v1.68.1-windows-amd64\rclone mount echoview-union: F: -o
 UserName=pam_user --vfs-cache-mode full --vfs-cache-max-size 50G --file-perms 0777
 --dir-perms 0777 --network-mode --config=C:\Users\pam_user\Desktop\rclone_custom_prod.conf
