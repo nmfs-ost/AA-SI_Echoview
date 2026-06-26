@@ -28,7 +28,7 @@ UserName=pam_user --vfs-cache-mode full --vfs-cache-max-size 50G --file-perms 07
       3. You can save the EV file anywhere. We recommend not saving the EV file to the F drive, because, again, it exists in a virtual world. We are setting up the directory structure so that the EV files can be written to the GCS prod bucket in a way that does not interfere with the data structure. Stay tuned for more information.
       4. After the .evi file(s) have been written to the F drive, you will want to **copy/move them to the GCS prod data directory** where your files really reside. This is really important to have a permanent copy of the .evi files.
          1. Using the Windows Explorer, copy/move the .evi files from the F drive to the data drive on the Q drive (which should point to the prod bucket - see [Link to GCS prod Bucket](#Link-to-GCS-prod-Bucket) above.
-1. Now, you can read your data files directly from the GCS prod bucket without using the F virtual mirror - i.e., you can close the F mount, read the data files directly from the GCS prod bucket, and your read times should be quick.
+1. Now, you can read your data files directly from the GCS prod bucket without using the F virtual mirror - i.e., you can close the F mount, read the data files directly from the GCS prod bucket, and your read times should be normal for files over a network.
 
 
 
