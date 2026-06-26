@@ -6,6 +6,8 @@ The cloud-licensing instructions are found in the PDF document, "Echoview cloud 
 Echoview essentially works the same on the AA-SI Windows VM as it does on a local PC, with one exception (that we've found so far) - that is the creation of .evi files. See the section [evi files](#evi-files) for more information. 
 
 # evi Files
-When Echoview first reads a data file, or when the version of Echoview has changed such that the format of the .evi file changes, Echoview creates a .evi file. This file is used by Echoview to read a data file more efficiently and faster than an initial read. 
+When Echoview first reads a data file, or when the version of Echoview has changed such that the format of the .evi file changes, Echoview creates a .evi file. This file is used by Echoview to read a data file more efficiently and faster than an initial read. These .evi files are by default written to the same directory as the data files. On a local PC this is not a problem. Even on local networks, this process can slow down initial reads of data when/if there are network interuptions. On the Windows VM, writing these .evi files causes severe limitations to reading data files. For example, in initial testing we found that it took 25 minutes to read one 200-MB EK60 .raw file! We are working with Echoview to modify how and where they write the .evi files, but in the interim, Daniel Woodrich created an alternative method that works well, but requires a few more steps.
+
+
 
 
