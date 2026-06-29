@@ -9,6 +9,10 @@ The cloud-licensing instructions are found in the PDF document, "Echoview cloud 
 
 Echoview essentially works the same on the AA-SI Windows VM as it does on a local PC, with one exception (that we've found so far) - that is the creation of .evi files. See the section [evi files](#evi-files) for more information. 
 
+## Running Echoview on the AA-SI Windows VM
+Most users are familiar with running Echoview on their local PC, so we do not provide any further instructions for that mode.
+
+
 ## Link to GCS prod Bucket
 Currently, the default drive mount is to the GCS "dev" bucket when you start the Windows VM. In the future, this will be modified to the "prod" bucket. In the meantime, create a new mount to the "prod" bucket:
 1. Follow the instructions in [AA-SI_WindowsVM](https://github.com/nmfs-ost/AA-SI_WindowsVM/tree/main/README.md#Using-the-Windows-VM) to create the mount to the prod bucket.
@@ -37,6 +41,5 @@ UserName=pam_user --vfs-cache-mode full --vfs-cache-max-size 50G --file-perms 07
 # Disclaimer
 This repository is a scientific product and is not official communication of the National Oceanic and Atmospheric Administration, or the United States Department of Commerce. All NOAA GitHub project code is provided on an ‘as is’ basis and the user assumes responsibility for its use. Any claims against the Department of Commerce or Department of Commerce bureaus stemming from the use of this GitHub project will be governed by all applicable Federal law. Any reference to specific commercial products, processes, or services by service mark, trademark, manufacturer, or otherwise, does not constitute or imply their endorsement, recommendation or favoring by the Department of Commerce. The Department of Commerce seal and logo, or the seal and logo of a DOC bureau, shall not be used in any manner to imply endorsement of any commercial product or activity by DOC or the United States Government.
 
-###This is a test again
 
 
