@@ -35,6 +35,9 @@ UserName=pam_user --vfs-cache-mode full --vfs-cache-max-size 50G --file-perms 07
          1. Using the Windows Explorer, copy/move the .evi files from the F drive to the data drive on the Q drive (which should point to the prod bucket - see [Link to GCS prod Bucket](#Link-to-GCS-prod-Bucket) above.
 1. Now, you can read your data files directly from the GCS prod bucket without using the F virtual mirror - i.e., you can close the F mount, read the data files directly from the GCS prod bucket, and your read times should be normal for files over a network.
 
+## Utility Functions and Source Code
+TBD: Source code for functions and other applications (e.g., COM scripting) can be found at:
+
 # Disclaimer
 This repository is a scientific product and is not official communication of the National Oceanic and Atmospheric Administration, or the United States Department of Commerce. All NOAA GitHub project code is provided on an ‘as is’ basis and the user assumes responsibility for its use. Any claims against the Department of Commerce or Department of Commerce bureaus stemming from the use of this GitHub project will be governed by all applicable Federal law. Any reference to specific commercial products, processes, or services by service mark, trademark, manufacturer, or otherwise, does not constitute or imply their endorsement, recommendation or favoring by the Department of Commerce. The Department of Commerce seal and logo, or the seal and logo of a DOC bureau, shall not be used in any manner to imply endorsement of any commercial product or activity by DOC or the United States Government.
 
