@@ -10,18 +10,15 @@ The cloud-licensing instructions are found in the PDF document, "Echoview cloud 
 Echoview essentially works the same on the AA-SI Windows VM as it does on a local PC, with one exception (that we've found so far) - that is the creation of .evi files. See the section [evi files](#evi-files) for more information. 
 
 ## Running Echoview on the AA-SI Windows VM
-Most users are familiar with running Echoview on their local PC, so we do not provide any further instructions for that mode.
+Most users are familiar with running Echoview on their local PC, so we do not provide any further instructions for that operational mode. Echoview provides training and good documention for using Echoview and we recommend users use those resources. The AA-SI is transitioning Echoview to NOAA Fisheries' Google Cloud Windows Virtual Machine (VM), which uses a cloud license. In general, Echoview works similarly on the Windows VM as it does on the local PC, with a couple of exceptions. The first is using the cloud license and the second is the creation of the .evi files (see [evi files section](#Creating-evi-files))
 
+### Request and Setup a Windows VM
+The [AA-SI GitHub Windows VM GitHub repo](https://github.com/nmfs-ost/AA-SI_WindowsVM) provides instructions on how to request and setup the Windows VM. 
 
-## Link to GCS prod Bucket
-Currently, the default drive mount is to the GCS "dev" bucket when you start the Windows VM. In the future, this will be modified to the "prod" bucket. In the meantime, create a new mount to the "prod" bucket:
-1. Follow the instructions in [AA-SI_WindowsVM](https://github.com/nmfs-ost/AA-SI_WindowsVM/tree/main/README.md#Using-the-Windows-VM) to create the mount to the prod bucket.
-2. When the AA-SI gets a full-fledged Windows VM, some of this will change (e.g., default to the prod, rather than dev bucket), but for now the instructions work - they are just clunky.
-
-## evi Files
+### Creating evi Files
 When Echoview first reads a data file, or when the version of Echoview has changed such that the format of the .evi file changes, Echoview creates a .evi file. This file is used by Echoview to read a data file more efficiently and faster than an initial read. These .evi files are by default written to the same directory as the data files. On a local PC this is not a problem. On local networks, this process can slow down initial reads of data when/if there are network interuptions. However, reading data files and writing the .evi files from the Windows VM causes severe limitations. For example, in initial testing we found that it took 25 minutes to read one 200-MB EK60 .raw file! After the .evi file is written, data reading is as fast as on local PCs or networks for subsequent reads. We are working with Echoview to modify how and where they write the .evi files, but in the interim, Daniel Woodrich created an alternative method that works well, but requires a few more steps. </br>
 
-1. The instructions are provided in this [idx fix document](./docs/Echoview_idx_files_issue_immediate_solution.pdf).
+1. Instructions are provided in this [idx fix document](./docs/Echoview_idx_files_issue_immediate_solution.pdf).
 1. A version of the rclone_custom.conf file for the prod GCS bucket is [here](docs/rclone_custom_prod.conf.txt).
    1. Make sure you remove the ".txt" suffix!
 1. Open a command prompt window by either clicking on the cmd prompt icon <img src="images/cmd.png" width="25" height="25"> in the taskbar or typing "command prompt" in the search field in the taskbar.
