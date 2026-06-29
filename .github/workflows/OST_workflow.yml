@@ -1,0 +1,10 @@
+name: Call Run GitLeaks
+on: [push, pull_request, workflow_dispatch]
+
+jobs:
+  call-workflow:
+    uses: nmfs-ost/admin/.github/workflows/run-gitleaks.yml@main
+    secrets: inherit
+    permissions:
+      contents: read
+      actions: read
