@@ -12,7 +12,7 @@ The AA-SI is transitioning Echoview to NOAA Fisheries' Google Cloud Windows Virt
 - [Utilities and Source Code](#Utilities-and-Source-Code)
 
 ## Cloud License
-The AA-SI currently is using a timed cloud license on a version of the PAM Windows VM. This license has three seats, meaning three people can be using Echoview simultaneously. We hope to have an annual license soon.  For more information on the Windows VM, please navigate to the [AA-SI GitHub Windows VM repo](https://github.com/nmfs-ost/AA-SI_WindowsVM) </br>
+The AA-SI currently now has an annual cloud license that can be used by NOAA Fisheries Science Center FTE and affiliates. There is one license per Science Center with one seat per license, meaning that only one person can use that license at a time. This is an annual license and expires in September 2027. The cloud license can be set up on as many devices as you like. For example, a license can be set up on a local PC, the Fisheries OCIO Windows workstation (TBD) or the Passive Acoustics (PAM) Windows VM [AA-SI GitHub Windows VM repo](https://github.com/nmfs-ost/AA-SI_WindowsVM). Again, only one person/device at a time. </br>
 
 The cloud-licensing instructions are found in the PDF document, "Echoview cloud licensing instructions.pdf" that can be accessed via: "P:\Echoview\Echoview cloud licensing instructions.pdf" (on the "dev" GCS environment) or here [Echoview Cloud License](./docs/Echoview_Echoview_cloud_licensing_instructions.pdf). If you run Echoview and the license is not found or working, please see these instructions. </br>
 
